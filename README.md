@@ -71,19 +71,19 @@ Para testar o script ```tp1_3.3.py``` que executará o Dashboard das consultas, 
 
 Em seguida, recomenda-se testar uma consulta por vez, comentando todas as outras que não estiverem sendo utilizadas no momento e deixando descomentada somente a que está sendo testada.
 
-Após isso, basta ficar atento para as questões ```A``` ```B``` e ```C```, que precisam ter o valor do ASIN alterado para o ASIN do produto que se deseja buscar.
+Após isso, basta ficar atento às questões ```A``` ```B``` e ```C```, que precisam ter o valor do ASIN alterado para o ASIN do produto que se deseja buscar.
 
-Para facilitar esse processo, identificamos nessas 3 questões onde deve ser alterado para colocar o valor do ASIN desejado. Por exemplo na questão B:
+Para facilitar esse processo, identificamos nessas 3 questões onde deve ser alterado para colocar o valor do ASIN desejado. Por exemplo:
 
 ```python3
-# # QUESTAO B - Dado um produto, listar os produtos similares com maiores vendas do que ele
+# QUESTAO B - Dado um produto, listar os produtos similares com maiores vendas do que ele
 
-# # !!!! ---> MODIFIQUE AS LINHAS __ E __ NOS CAMPOS 'COLOQUE_ASIN_AQUI' DE ACORDO COM O PRODUTO QUE DESEJA BUSCAR
-# cur.execute('''SELECT MainTable.ASIN, MainTable.title, MainTable.salesrank 
-#                 FROM MainTable 
-#                 JOIN \"Similar\" s ON MainTable.ASIN = s.ASIN_similar 
-#                 WHERE s.ASIN_original = 'COLOQUE_ASIN_AQUI' AND 
-#                 MainTable.salesrank > (SELECT salesrank FROM MainTable WHERE ASIN = 'COLOQUE_ASIN_AQUI')
-#                 ORDER BY MainTable.salesrank ASC;'''
-# )
+# !!!! ---> MODIFIQUE AS LINHAS 59 E 60 NOS CAMPOS 'COLOQUE_ASIN_AQUI' DE ACORDO COM O PRODUTO QUE DESEJA BUSCAR
+cur.execute('''SELECT MainTable.ASIN, MainTable.title, MainTable.salesrank 
+                FROM MainTable 
+                JOIN \"Similar\" s ON MainTable.ASIN = s.ASIN_similar 
+                WHERE s.ASIN_original = 'COLOQUE_ASIN_AQUI' AND 
+                MainTable.salesrank > (SELECT salesrank FROM MainTable WHERE ASIN = 'COLOQUE_ASIN_AQUI')
+                ORDER BY MainTable.salesrank ASC;'''
+)
 ```
