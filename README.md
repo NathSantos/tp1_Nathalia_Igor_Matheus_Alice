@@ -1,11 +1,14 @@
 # ufam-db-tp1
 
-Repositorio base para o Trabalho de Banco de Dados da Graduação em Ciencia da Computação na UFAM
+Repositório base para o 1o Trabalho de Banco de Dados da Graduação em Ciencia da Computação na UFAM
 
-## Scripts
+## Arquivos
 
+- ```tp1_3.1.pdf``` -> Documentação do trabalho
 - ```tp1_3.2.py``` -> Script contendo a extração dos dados, a criação do esquema do BD e o povoamento das relações
 - ```tp1_3.3.py``` -> Script contendo o Dashboard com a execução das consultas
+- ```classes.py``` -> Script contendo classes necessárias para a extração de dados **(esse arquivo é importado no script tp1_3.2.py)**
+- ```requirements.txt``` -> Comandos ```pip install``` das bibliotecas necessárias
 
 ## Como executar os scripts
 
