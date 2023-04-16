@@ -68,7 +68,7 @@ Entretando, **se as consultas forem testadas no pyAdmin**, por exemplo, devem ap
 ```
 -----------------------------------------------------
 
-Para testar o script ```tp1_3.3.py``` que executará o Dashboard das consultas, primeiramente deve-se alterar os dados de ```host```, ```nome_database```, ```user``` e ```password``` conforme foi feito para a execução do ```tp1_3.2.py```.  
+Para testar o script ```tp1_3.3.py``` que executará o Dashboard das consultas, deve-se também alterar os dados de ```host```, ```nome_database```, ```user``` e ```password``` conforme foi feito para a execução do ```tp1_3.2.py```.  
 
 Em seguida, recomenda-se testar uma consulta por vez, comentando todas as outras que não estiverem sendo utilizadas no momento e deixando descomentada somente a que está sendo testada.
 
