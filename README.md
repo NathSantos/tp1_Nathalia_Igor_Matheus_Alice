@@ -48,7 +48,10 @@ Caso seja testado com o arquivo ```amazon-meta.txt``` completo, é normal que de
 
 ### Script tp1_3.3.py
 
+-----------------------------------------------------
+
 **OBSERVAÇÃO IMPORTANTE!!!**
+
 Temos uma relação chamada "Similar", que é uma palavra reservada do SQL. 
 
 As consultas do dashboard já estão prontas para que o nome Similar não dê erro ao serem executadas:
@@ -57,10 +60,30 @@ As consultas do dashboard já estão prontas para que o nome Similar não dê er
 \"Similar\"
 ```
 
-Entretando, se as consultas forem testadas no pyAdmin, por exemplo, devem apenas ser retirados as contra-barras presentes no nome Similar. Logo, ficaria da seguinte forma:
+Entretando, **se as consultas forem testadas no pyAdmin**, por exemplo, devem apenas ser retirados as contra-barras presentes no nome Similar. Logo, ficaria da seguinte forma:
 
 ```SQL
 "Similar"
 ```
+-----------------------------------------------------
 
-Para testar o script ```tp1_3.3.py``` que executará o Dashboard das consultas, 
+Para testar o script ```tp1_3.3.py``` que executará o Dashboard das consultas, primeiramente deve-se alterar os dados de ```host```, ```nome_database```, ```user``` e ```password``` conforme foi feito para a execução do ```tp1_3.2.py```.  
+
+Em seguida, recomenda-se testar uma consulta por vez, comentando todas as outras que não estiverem sendo utilizadas no momento e deixando descomentada somente a que está sendo testada.
+
+Após isso, basta ficar atento para as questões ```A``` ```B``` e ```C```, que precisam ter o valor do ASIN alterado para o ASIN do produto que se deseja buscar.
+
+Para facilitar esse processo, identificamos nessas 3 questões onde deve ser alterado para colocar o valor do ASIN desejado. Por exemplo na questão B:
+
+```python3
+# # QUESTAO B - Dado um produto, listar os produtos similares com maiores vendas do que ele
+
+# # !!!! ---> MODIFIQUE AS LINHAS __ E __ NOS CAMPOS 'COLOQUE_ASIN_AQUI' DE ACORDO COM O PRODUTO QUE DESEJA BUSCAR
+# cur.execute('''SELECT MainTable.ASIN, MainTable.title, MainTable.salesrank 
+#                 FROM MainTable 
+#                 JOIN \"Similar\" s ON MainTable.ASIN = s.ASIN_similar 
+#                 WHERE s.ASIN_original = 'COLOQUE_ASIN_AQUI' AND 
+#                 MainTable.salesrank > (SELECT salesrank FROM MainTable WHERE ASIN = 'COLOQUE_ASIN_AQUI')
+#                 ORDER BY MainTable.salesrank ASC;'''
+# )
+```
