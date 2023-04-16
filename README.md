@@ -16,7 +16,9 @@ Repositório base para o 1o Trabalho de Banco de Dados da Graduação em Ciencia
 
 Primeiro, crie um BD utilizando o pgAdmin ou o psql pelo terminal ```CREATE DATABASE nome_database;```
 
-Em seguida, no script ```tp1_3.2.py``` troque as variáveis do seguinte trecho de código, presente logo no início do código, de acordo com os seus dados:
+Em seguida, instale as bibliotecas presentes no arquivo ```requirements.txt```, necessárias para a execução dos códigos 
+
+Após isso, no script ```tp1_3.2.py```, troque as variáveis do seguinte trecho de código, presente logo no início do código, de acordo com os seus dados:
 
 ```python
 # Altere de acordo com seus dados
