@@ -501,15 +501,6 @@ arquivo.close()
 #
 # =================================================================================================
 
-
-# [(['Id', 1], 
-# ['ASIN', '0827229534'], 
-# ['title', 'Patterns of Preaching: A Sermon Sample'], 
-# ['group', 'Book'], 
-# ['salesrank', '396585'], 
-# ['similar', 5, ['0804215715', '156101074X', '0687023955', '0687074231', '082721619X']],
-#  ['categories', 2])
-
 # Percorrer a lista de objetos criados anteriormente
 for obj in vet_products:
     # Extrair os valores do objeto
@@ -531,9 +522,6 @@ for obj in vet_products:
         cur.execute("INSERT INTO \"Similar\" (ASIN_original, ASIN_similar) VALUES (%s, %s)",
                     (asin_value, similar_values[2][i]))
 
-# [('0827229534', 1, '2000-7-28', 'A2JW67OY8U6HHK', '5', '10', '9'), 
-#  ('0827229534', 1, '2003-12-14', 'A2VE83MZF98ITY', '5', '6', '5'),
-
 for obj in vet_reviews:
     # Extrair os valores do objeto
     asin_value = obj[0]
@@ -545,10 +533,7 @@ for obj in vet_reviews:
 
     # Insere dados na tabela Reviews
     cur.execute("INSERT INTO Reviews (ASIN_original, customer, data, rating, votes, helpful) VALUES (%s, %s, %s, %s, %s, %s)", 
-            (asin_value, customer_value, data_value, rating_value, votes_value, helpful_value))
-    
-# [('0827229534', 2.0, 2.0, 5.0), 
-#  ('0738700797', 12.0, 12.0, 4.5), 
+            (asin_value, customer_value, data_value, rating_value, votes_value, helpful_value)) 
 
 for obj in vet_reviews_general_infos:
     # Extrair os valores do objeto
@@ -560,20 +545,6 @@ for obj in vet_reviews_general_infos:
     # Insere dados na tabela ReviewsGeneralInfos
     cur.execute("INSERT INTO ReviewsGeneralInfos (ASIN_original, total, downloaded, avg_rating) VALUES (%s, %s, %s, %s)", 
             (asin_value, total_value, downloaded_value, avg_rating_value))
-    
-# [('0827229534', 1, 'Books', '283155'), 
-#  ('0827229534', 1, 'Subjects', '1000'), 
-#  ('0827229534', 1, 'Religion & Spirituality', '22'), 
-#  ('0827229534', 1, 'Christianity', '12290'), 
-#  ('0827229534', 1, 'Clergy', '12360'), 
-#  ('0827229534', 1, 'Preaching', '12368'), 
-#  ('0827229534', 2, 'Books', '283155'), 
-#  ('0827229534', 2, 'Subjects', '1000'), 
-#  ('0827229534', 2, 'Religion & Spirituality', '22'), 
-#  ('0827229534', 2, 'Christianity', '12290'), 
-#  ('0827229534', 2, 'Clergy', '12360'), 
-#  ('0827229534', 2, 'Sermons', '12370'), 
-#  ('0738700797', 1, 'Books', '283155'),
 
 for obj in vet_unique_categories:
     id_categoria_value = int(obj[1])
