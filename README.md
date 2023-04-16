@@ -9,6 +9,7 @@ Repositório base para o 1o Trabalho de Banco de Dados da Graduação em Ciencia
 - ```tp1_3.3.py``` -> Script contendo o Dashboard com a execução das consultas
 - ```classes.py``` -> Script contendo classes necessárias para a extração de dados **(esse arquivo é importado no script tp1_3.2.py)**
 - ```requirements.txt``` -> Comandos ```pip install``` das bibliotecas necessárias
+- ```amazon-meta.txt``` -> Arquivo de entrada que pode ser baixado em: https://snap.stanford.edu/data/amazon-meta.html
 
 ## Como executar os scripts
 
