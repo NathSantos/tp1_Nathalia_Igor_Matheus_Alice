@@ -48,4 +48,19 @@ Caso seja testado com o arquivo ```amazon-meta.txt``` completo, é normal que de
 
 ### Script tp1_3.3.py
 
-Para testar o script ```tp1_3.3.py``` que executará o Dashboard das consultas, ...
+**OBSERVAÇÃO IMPORTANTE!!!**
+Temos uma relação chamada "Similar", que é uma palavra reservada do SQL. 
+
+As consultas do dashboard já estão prontas para que o nome Similar não dê erro ao serem executadas:
+
+```python
+\"Similar\"
+```
+
+Entretando, se as consultas forem testadas no pyAdmin, por exemplo, devem apenas ser retirados as contra-barras presentes no nome Similar. Logo, ficaria da seguinte forma:
+
+```SQL
+"Similar"
+```
+
+Para testar o script ```tp1_3.3.py``` que executará o Dashboard das consultas, 
