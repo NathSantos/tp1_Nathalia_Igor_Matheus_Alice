@@ -49,6 +49,8 @@ cur.execute('''(SELECT r.rating, r.helpful, r.customer, r.data, r.asin_original
             )ORDER BY r.rating ASC, r.helpful DESC LIMIT 5);'''
 )
 
+x = cur.fetchall()
+print(x)
 
 # QUESTAO B - Dado um produto, listar os produtos similares com maiores vendas do que ele
 
@@ -61,6 +63,9 @@ cur.execute('''SELECT MainTable.ASIN, MainTable.title, MainTable.salesrank
                 ORDER BY MainTable.salesrank ASC;'''
 )
 
+x = cur.fetchall()
+print(x)
+
 
 # QUESTAO C - Dado um produto, mostrar a evolução diária das médias de avaliação ao longo do 
 # intervalo de tempo coberto no arquivo de entrada
@@ -71,6 +76,9 @@ cur.execute('''SELECT r.data, AVG(r.rating) OVER (ORDER BY r.data) AS media_rati
                     WHERE r.ASIN_original = 'COLOQUE_ASIN_AQUI'
                     ORDER BY r.data ASC;'''
 )
+
+x = cur.fetchall()
+print(x)
 
 
 # QUESTAO D - Listar os 10 produtos líderes de venda em cada grupo de produtos
@@ -84,6 +92,9 @@ cur.execute('''SELECT id, asin, title, grupo, salesrank, quant_categories
                 ORDER BY grupo, salesrank DESC'''
 )
 
+x = cur.fetchall()
+print(x)
+
 
 # QUESTAO E - Listar os 10 produtos com a maior média de avaliações úteis positivas por produto
 cur.execute('''SELECT rg.asin_original, rg.total, rg.avg_rating, 
@@ -96,6 +107,9 @@ cur.execute('''SELECT rg.asin_original, rg.total, rg.avg_rating,
                 ORDER BY avg_helpful_per_review DESC
                 LIMIT 10'''
 )
+
+x = cur.fetchall()
+print(x)
 
 
 # QUESTAO F - Listar as 5 categorias de produto com a maior média de avaliações úteis positivas por produto
@@ -111,6 +125,9 @@ cur.execute('''SELECT c.id_categoria, allc.nome_categoria,
                 ORDER BY avg_helpful_per_review DESC
                 LIMIT 5'''
 )
+
+x = cur.fetchall()
+print(x)
 
 
 # QUESTAO G - Listar os 10 clientes que mais fizeram comentários por grupo de produto
